@@ -27,15 +27,15 @@ def kotonoha():
         kind = match.group(1)
         words = match.group(2)
         if request.method == 'POST':
-            tag_param = '?{}={}'.format(kind,words)
-            req = URL.join(tag_param)
+            tag_param = '{}={}'.format(kind,words)
+            req = '?'.join([URL,tag_param])
             query_json = json.loads(requests.get(req).content.decode('utf-8'))
-            resp_qs = ['Kotonoha for "%s":"%s"\n' % kind,tag]
+            resp_qs = ['Kotonoha for {}:{}\n'.format(kind,words)]
             '''debug'''
-            resp_j = list(map(get_response_string, qj))
-            print('¥¥ response: {}'.format(resp_j))
+            #resp_j = list(map(get_response_string, query_json))
+            #print('¥¥ response: {}'.format(resp_j))
             '''debug end'''
-            resp_qs.extend(map(get_response_string, qj))
+            resp_qs.extend(map(get_response_string, query_json[len(query_json)-1]))
             return resp_qs
     else:
         return 'hint: (tag|keyword) [words]'
