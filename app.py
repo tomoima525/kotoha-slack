@@ -16,7 +16,7 @@ def kotonoha():
     Example:
         /kotonoha (tag|keyword) []
     """
-    text = request.forms.text
+    text = request.values.get('text')
 
     if not text:
         return 'hint: (tag|keyword) [words]'
