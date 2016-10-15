@@ -3,15 +3,11 @@ import requests
 import json
 import os
 import re
-import configparser
 from flask import Flask, url_for, request, redirect, Response
 
 app = Flask(__name__)
 
-configParser = configparser.ConfigParser()
-configFilePath = 'config.txt'
-configParser.read(configFilePath)
-SLACK_KEY =  configParser['SLACK_KEY']['key']
+SLACK_KEY =  os.environ['SLACK_KEY']
 
 URL = 'https://kotoha-server.herokuapp.com/api/phrases.json'
 
@@ -62,5 +58,5 @@ def get_response_string(qdict):
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('DEBUG', True)
+    debug = os.environ.get('DEBUG', False)
     app.run(host='0.0.0.0', port=port, debug = debug)
