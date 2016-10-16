@@ -49,4 +49,4 @@ instance/
 venv/
 ENV/
 
-config.txt
+.cache/
