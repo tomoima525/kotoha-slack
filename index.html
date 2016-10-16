@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Kotoha-slack : A slack command integration for kotoha, a great chrome extension to find Anime quotes!">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Kotoha-slack</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tomoima525/kotoha-slack">View on GitHub</a>
+
+          <h1 id="project_title">Kotoha-slack</h1>
+          <h2 id="project_tagline">A slack command integration for kotoha, a great chrome extension to find Anime quotes!</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tomoima525/kotoha-slack/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tomoima525/kotoha-slack/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="kotoha-slack" class="anchor" href="#kotoha-slack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>kotoha-slack</h1>
+
+<p>A slack command integration for <a href="https://github.com/konifar/kotoha">kotoha</a>, a great chrome extension to find Anime quotes!</p>
+
+<p><img src="https://github.com/tomoima525/kotoha-slack/blob/master/img/demo.gif" alt="demo"></p>
+
+<h1>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h1>
+
+<p>From any channel, just type:</p>
+
+<pre><code>/kotoha keyword [search term]
+</code></pre>
+
+<p>Or if you want to search from a title of Animes:</p>
+
+<pre><code>/kotoha tag [search term]
+</code></pre>
+
+<p>Currently, most of quotes are in Japanese, but you are welcomed to add a new one using <a href="https://github.com/konifar/kotoha">kotoha</a> extension from Chrome.</p>
+
+<h1>
+<a id="integrate-to-your-slack" class="anchor" href="#integrate-to-your-slack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Integrate to your Slack</h1>
+
+<ol>
+<li>Go to your channel and select <strong>Customize Slack</strong>
+</li>
+<li>From the side menu, select <strong>Configure apps</strong>
+</li>
+<li>Select <strong>Custom Integrations</strong> and you will see <strong>Slash Commands</strong> on the list</li>
+<li>Click on <strong>Add Configuration</strong> and input information below<br>
+<img src="https://github.com/tomoima525/kotoha-slack/blob/master/img/img_3.png" alt="img_3">
+</li>
+<li>You are ready to go!</li>
+</ol>
+
+<h1>
+<a id="developing-kotoha-slack" class="anchor" href="#developing-kotoha-slack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developing kotoha-slack</h1>
+
+<p>This command is written in python and runs on heroku.</p>
+
+<p>After clone the project, install required libraries:</p>
+
+<pre><code>$ pip install -r requirements.txt
+</code></pre>
+
+<p>then, run with DEBUG mode</p>
+
+<pre><code>$ DEBUG=True python app.py
+</code></pre>
+
+<h1>
+<a id="acknowledgement" class="anchor" href="#acknowledgement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgement</h1>
+
+<p>Many Thanks to konifar <a href="https://twitter.com/konifar">twitter</a>, <a href="https://github.com/konifar">github</a> for letting me use the api of kotoha :)</p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+
+<p>MIT License.
+Copyright (c) 2016 Tomoaki Imai</p>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h1>
+
+<ul>
+<li>Please use the <a href="https://github.com/tomoima525/kotoha-slack/issues">issue tracker</a> to report any bugs and feature requests or let me know from twitter <a href="https://twitter.com/tomoima525">@tomoima525</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Kotoha-slack maintained by <a href="https://github.com/tomoima525">tomoima525</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
