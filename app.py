@@ -11,11 +11,11 @@ SLACK_KEY =  os.environ['SLACK_KEY']
 
 URL = 'https://kotoha-server.herokuapp.com/api/phrases.json'
 
-@app.route('/kotonoha',methods=['POST'])
-def kotonoha():
+@app.route('/kotoha',methods=['POST'])
+def kotoha():
     """
     Example:
-        /kotonoha (tag|text) []
+        /kotoha (tag|text) []
     """
     text = request.values.get('text')
     slack_key = request.values.get('token')
@@ -38,7 +38,7 @@ def kotonoha():
             tag_param = '{}={}'.format(kind,words)
             req = '?'.join([URL,tag_param])
             query_json = json.loads(requests.get(req).content.decode('utf-8'))
-            resp_qs = [':four_leaf_clover: Kotonoha for {}:{}\n'.format(kind,words)]
+            resp_qs = [':four_leaf_clover: Kotoha for {}:{}\n'.format(kind,words)]
             '''debug'''
             #resp_j = map(get_response_string, query_json)
             #print('response: {}'.format(resp_j))
@@ -58,5 +58,5 @@ def get_response_string(qdict):
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('DEBUG', False)
+    debug = os.environ.get('DEBUG', True)
     app.run(host='0.0.0.0', port=port, debug = debug)
