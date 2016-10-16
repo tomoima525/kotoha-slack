@@ -7,10 +7,10 @@ from flask import Flask, url_for, request, redirect, Response
 
 app = Flask(__name__)
 
-if os.environ.get('DEBUG', False) == True:
-    SLACK_KEY =  os.environ['SLACK_KEY']
-
 URL = 'https://kotoha-server.herokuapp.com/api/phrases.json'
+
+# Check token if you don't want to conflict with other slash commands
+#SLACK_KEY =  os.environ['SLACK_KEY']
 
 @app.route('/kotoha',methods=['POST'])
 def kotoha():
@@ -19,13 +19,13 @@ def kotoha():
         /kotoha (tag|text) []
     """
     text = request.values.get('text')
-    slack_key = request.values.get('token')
-
-    if debug is False:
-        if slack_key != SLACK_KEY:
-            return 'slack token does not match'
-    else:
-        print('It\'s debug mode')
+    # Check token if you don't want to conflict with other slash commands
+    #slack_key = request.values.get('token')
+    #if debug is False:
+    #    if slack_key != SLACK_KEY:
+    #        return 'slack token does not match'
+    #else:
+    #    print('It\'s debug mode')
 
     if not text:
         return 'hint: (tag|text) [word]'
@@ -60,6 +60,4 @@ if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
     debug = os.environ.get('DEBUG', False)
-    if debug == False:
-        SLACK_KEY =  os.environ['SLACK_KEY']
     app.run(host='0.0.0.0', port=port, debug = debug)
