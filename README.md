@@ -26,7 +26,7 @@ Currently, most of quotes are in Japanese, but you are welcomed to add a new one
 5. You are ready to go!
 
 # Developing kotoha-slack
-This command is written in python and runs on herokuapp.
+This command is written in python and runs on heroku.
 
 After clone the project, install required libraries:
 ```
@@ -38,7 +38,7 @@ $ DEBUG=True python app.py
 ```
 
 # Acknowledgement
-Many Thanks to konifar[twitter](https://twitter.com/konifar)[github](https://github.com/konifar) for letting me use the api of kotoha :)
+Many Thanks to konifar [twitter](https://twitter.com/konifar), [github](https://github.com/konifar) for letting me use the api of kotoha :)
 
 # License
 MIT License.
