@@ -36,8 +36,7 @@ def kotoha():
         kind = match.group(1)
         words = match.group(2)
         if request.method == 'POST':
-            tag_param = '{}={}'.format(kind,words)
-            req = '?'.join([URL,tag_param])
+            req = get_request_string(kind, words)
             query_json = json.loads(requests.get(req).content.decode('utf-8'))
             resp_qs = [':four_leaf_clover: Kotoha for {}:{}\n'.format(kind,words)]
             '''debug'''
@@ -52,6 +51,10 @@ def kotoha():
 @app.route('/')
 def index():
     return redirect('https://github.com/tomoima525')
+
+def get_request_string(kind, words):
+    tag_param = '{}={}'.format(kind,words)
+    return '?'.join([URL,tag_param])
 
 def get_response_string(qdict):
     return '{} from {}'.format(qdict.get('text'),qdict.get('tag_list'))
